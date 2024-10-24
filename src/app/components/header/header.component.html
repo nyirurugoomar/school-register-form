@@ -1,0 +1,42 @@
+<header class="header">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo" />
+      </div>
+  
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a routerLink="/" class="nav-link">Home</a>
+        <a routerLink="/about" class="nav-link">About</a>
+        <a routerLink="/courses" class="nav-link">Courses</a>
+        <a routerLink="/contact" class="nav-link">Contact</a>
+      </nav>
+  
+      <!-- Auth Buttons -->
+      <div class="auth-buttons">
+        <button class="btn login-btn">Login</button>
+        <a href="/register">
+            <button class="btn register-btn">Register</button>
+        </a>
+      </div>
+  
+      <!-- Hamburger Menu for Mobile -->
+      <div class="hamburger" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" [class.show]="menuOpen">
+        <a routerLink="/" (click)="toggleMenu()">Home</a>
+        <a routerLink="/about" (click)="toggleMenu()">About</a>
+        <a routerLink="/courses" (click)="toggleMenu()">Courses</a>
+        <a routerLink="/contact" (click)="toggleMenu()">Contact</a>
+        <button class="btn login-btn" (click)="toggleMenu()">Login</button>
+        <button class="btn register-btn" (click)="toggleMenu()">Register</button>
+      </div>
+    </div>
+  </header>
+  
