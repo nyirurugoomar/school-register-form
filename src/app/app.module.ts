@@ -29,6 +29,7 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { FormComponent } from "./components/form/form.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatRadioModule} from '@angular/material/radio';
+import { GuardianInfoComponent } from './components/guardian-info/guardian-info.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatRadioModule} from '@angular/material/radio';
     RegisterComponent,
     PersonalInfoComponent,
     FormComponent,
+    GuardianInfoComponent,
   ],
   imports: [
     BrowserModule,

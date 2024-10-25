@@ -1,5 +1,5 @@
 import { Component,inject } from '@angular/core';
-import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -8,15 +8,33 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  private _formBuilder = inject(FormBuilder);
+  firstFormGroup: FormGroup;
+  guardianFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  thirdFormGroup = this._formBuilder.group({
-    thirdCtrl: ['', Validators.required],
-  });
+  constructor(private _formBuilder: FormBuilder) {
+    this.firstFormGroup = this._formBuilder.group({
+      fullname: ['', Validators.required],
+      dob1: ['', Validators.required],
+      gender: ['', Validators.required],
+      nationality: ['', Validators.required],
+      address: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone1: ['', Validators.required],
+      idnumber: ['', Validators.required]
+    });
+
+    this.guardianFormGroup = this._formBuilder.group({
+      // Define controls for guardian info form
+    });
+
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required],
+    });
+
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required],
+    });
+  }
 }

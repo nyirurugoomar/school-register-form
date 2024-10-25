@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import country from '../../../../constant/country.json'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-personal-info',
@@ -6,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './personal-info.component.css'
 })
 export class PersonalInfoComponent {
+  countries = country;
+
+  @Input() formGroup! : FormGroup
 
 }
