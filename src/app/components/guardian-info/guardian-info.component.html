@@ -4,7 +4,7 @@
   <div class="bg-blue-500 rounded-t-lg">
     <h2 class="text-white text-2xl p-4">Guardian/Parent Information</h2>
   </div>
-  <form class="w-full">
+  <form [formGroup]="guardianForm"  class="w-full">
     <div class="grid space-y-2">
       <label for="fullName">FullName</label>
       <input
@@ -12,6 +12,8 @@
         class="border-[#ced4da] w-[50%] h-10 border-[1px] rounded-[5px] text-[#333] font-[500] p-2 outline-none"
         placeholder="Full name"
         name="fullName"
+        formControlName="fullname"
+        
       />
     </div>
     <div class="flex gap-x-4 mt-4 items-center">
@@ -22,7 +24,7 @@
             type="Email"
             placeholder="Enter Email "
             class="p-2 border-[#ced4da] w-full h-10 border-[1px] rounded-[5px] text-[#333] font-[500]"
-            name="dob1"
+            formControlName="email"
           />
         </div>
       </div>
@@ -33,6 +35,7 @@
             type="number"
             placeholder="Enter Phone Number"
             class="p-2 border-[#ced4da] w-full h-10 border-[1px] rounded-[5px] text-[#333] font-[500]"
+            formControlName="phone2"
             
           />
         </div>
@@ -46,7 +49,7 @@
               type="text"
               placeholder="Enter Occupation "
               class="p-2 border-[#ced4da] w-full h-10 border-[1px] rounded-[5px] text-[#333] font-[500]"
-              
+              formControlName="occupation"
             />
           </div>
         </div>

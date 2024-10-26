@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component,Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-guardian-info',
   templateUrl: './guardian-info.component.html',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class GuardianInfoComponent {
 
+  @Input() guardianForm!:FormGroup;
 }

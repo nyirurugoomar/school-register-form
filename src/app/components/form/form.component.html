@@ -9,7 +9,7 @@
 
   <mat-step [stepControl]="guardianFormGroup">
     <ng-template matStepLabel>Step 2: Guardian Information</ng-template>
-    <app-guardian-info [formGroup]="guardianFormGroup"></app-guardian-info>
+    <app-guardian-info [guardianForm]="guardianFormGroup"></app-guardian-info>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext>Next</button>

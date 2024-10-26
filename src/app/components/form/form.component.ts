@@ -26,7 +26,10 @@ export class FormComponent {
     });
 
     this.guardianFormGroup = this._formBuilder.group({
-      // Define controls for guardian info form
+      fullname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone2: ['', Validators.required],
+      occupation: ['', Validators.required]
     });
 
     this.secondFormGroup = this._formBuilder.group({
