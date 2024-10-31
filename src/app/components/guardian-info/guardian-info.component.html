@@ -13,8 +13,12 @@
         placeholder="Full name"
         name="fullName"
         formControlName="fullname"
-        
       />
+      <div *ngIf="guardianForm.get('fullname')?.touched && guardianForm.get('fullname')?.invalid">
+        <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('fullname')?.hasError('required')">Fullname is required</small>
+         <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('fullname')?.hasError('minlength')">Fullname must be at least 3 characters long</small>
+        <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('fullname')?.hasError('pattern')">Fullname must be letter</small>
+        </div>
     </div>
     <div class="flex gap-x-4 mt-4 items-center">
       <div class="grid w-[50%]">
@@ -26,7 +30,12 @@
             class="p-2 border-[#ced4da] w-full h-10 border-[1px] rounded-[5px] text-[#333] font-[500]"
             formControlName="email"
           />
+          <div *ngIf="guardianForm.get('email')?.touched && guardianForm.get('email')?.invalid">
+            <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('email')?.hasError('required')">Email is required</small>
+             <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('email')?.hasError('email')">Email is invalid</small>
+            </div>
         </div>
+
       </div>
       <div class="grid w-[50%]">
         <div class="grid space-y-2">
@@ -38,6 +47,10 @@
             formControlName="phone2"
             
           />
+          <div *ngIf="guardianForm.get('phone2')?.touched && guardianForm.get('phone2')?.invalid">
+            <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('phone2')?.hasError('required')">Phone number is required</small>
+             <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('phone2')?.hasError('pattern')">Phone must have 10 digits</small>
+            </div>
         </div>
       </div>
     </div>
@@ -51,6 +64,9 @@
               class="p-2 border-[#ced4da] w-full h-10 border-[1px] rounded-[5px] text-[#333] font-[500]"
               formControlName="occupation"
             />
+            <div *ngIf="guardianForm.get('occupation')?.touched && guardianForm.get('occupation')?.invalid">
+              <small class="text-red-600 text-[12px]" *ngIf="guardianForm.get('occupation')?.hasError('required')">Occupation is required</small>
+              </div>
           </div>
         </div>
       </div>

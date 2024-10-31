@@ -12,12 +12,18 @@
                   {{program.program}}
                 </option>
               </select>
+              <div *ngIf="educationForm.get('program')?.touched && educationForm.get('program')?.invalid">
+                <small class="text-red-600 text-[12px]" *ngIf="educationForm.get('program')?.hasError('required')">Program is required</small>
+               </div>
             </div>
             <div class="grid  w-[50%]">
               <div class="grid space-y-2">
                 <label >Name of Privious School</label>
                 <input type="text" placeholder="Enter Name Of Your Previous School" class=" p-2 border-[#ced4da] w-full h-10 border-[1px] rounded-[5px] text-[#333] font-[500]" formControlName="nameOfschool">
               </div>
+              <div *ngIf="educationForm.get('nameOfschool')?.touched && educationForm.get('nameOfschool')?.invalid">
+                <small class="text-red-600 text-[12px]" *ngIf="educationForm.get('nameOfschool')?.hasError('required')">Name of school is required</small>
+               </div>
             </div>
           </div>
           <div class="flex gap-x-4 mt-4 items-center">
@@ -26,6 +32,9 @@
                 <label >Start Date</label>
                 <input type="date" placeholder="Date " class=" p-2 border-[#ced4da] w-full h-10 border-[1px] rounded-[5px] text-[#333] font-[500]" formControlName="startDate">
               </div>
+              <div *ngIf="educationForm.get('startDate')?.touched && educationForm.get('startDate')?.invalid">
+                <small class="text-red-600 text-[12px]" *ngIf="educationForm.get('startDate')?.hasError('required')">Start date is required</small>
+               </div>
             </div>
           </div>
       </form>

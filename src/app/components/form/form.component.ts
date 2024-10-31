@@ -15,20 +15,20 @@ export class FormComponent {
 
   constructor(private _formBuilder: FormBuilder) {
     this.firstFormGroup = this._formBuilder.group({
-      fullname: ['', Validators.required],
+      fullname: ['',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]],
       dob1: ['', Validators.required],
       gender: ['', Validators.required],
       nationality: ['', Validators.required],
       address: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone1: ['', Validators.required],
-      idnumber: ['', Validators.required]
+      phone1: ['', [Validators.required,Validators.pattern('^[0-9]{10}$')]],
+      idnumber: ['', [Validators.required,Validators.pattern('^[0-9]{16}$')]]
     });
 
     this.guardianFormGroup = this._formBuilder.group({
-      fullname: ['', Validators.required],
+      fullname: ['',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]],
       email: ['', [Validators.required, Validators.email]],
-      phone2: ['', Validators.required],
+      phone2: ['', [Validators.required,Validators.pattern('^[0-9]{10}$')]],
       occupation: ['', Validators.required]
     });
 

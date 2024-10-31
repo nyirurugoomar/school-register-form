@@ -1,27 +1,28 @@
 <mat-stepper labelPosition="bottom" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <ng-template matStepLabel>Step 1: Personal Information</ng-template>
+    <ng-template >Step 1: Personal Information</ng-template>
     <app-personal-info [formGroup]="firstFormGroup"></app-personal-info>
-    <div>
-      <button mat-button matStepperNext>Next</button>
+    <div class="float-right">
+      <button matStepperNext [disabled]="firstFormGroup.invalid" [ngClass]="{ 'bg-blue-600': firstFormGroup.valid, 'bg-blue-300': firstFormGroup.invalid }"
+      class="text-white text-[17px] rounded-[5px] p-3">Next</button>
     </div>
   </mat-step>
 
   <mat-step [stepControl]="guardianFormGroup">
-    <ng-template matStepLabel>Step 2: Guardian Information</ng-template>
+    <ng-template >Step 2: Guardian Information</ng-template>
     <app-guardian-info [guardianForm]="guardianFormGroup"></app-guardian-info>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
+    <div class="space-x-10 float-right">
+      <button  matStepperPrevious class="text-white text-[17px] rounded-[5px] bg-blue-600 p-3">Back</button>
+      <button  matStepperNext [disabled]="guardianFormGroup.invalid" [ngClass]="{ 'bg-blue-600': guardianFormGroup.valid, 'bg-blue-300': guardianFormGroup.invalid }" class="text-white text-[17px] rounded-[5px] p-3">Next</button>
     </div>
   </mat-step>
 
   <mat-step [stepControl]="educationFormGroup" optional>
-    <ng-template matStepLabel>Step 3: Previous Education and Enrollment Information</ng-template>
+    <ng-template >Step 3: Previous Education and Enrollment Information</ng-template>
     <app-education [educationForm]="educationFormGroup"></app-education>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
+    <div class="space-x-10 float-right">
+      <button  matStepperPrevious class="text-white text-[17px] rounded-[5px] bg-blue-600 p-3">Back</button>
+      <button  matStepperNext [disabled]="educationFormGroup.invalid" [ngClass]="{ 'bg-blue-600': educationFormGroup.valid, 'bg-blue-300': educationFormGroup.invalid }" class="text-white text-[17px] rounded-[5px] p-3">Next</button>
     </div>
   </mat-step>
 
