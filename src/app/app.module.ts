@@ -30,6 +30,7 @@ import { FormComponent } from "./components/form/form.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatRadioModule} from '@angular/material/radio';
 import { GuardianInfoComponent } from './components/guardian-info/guardian-info.component';
+import { EducationComponent } from './components/education/education.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { GuardianInfoComponent } from './components/guardian-info/guardian-info.
     PersonalInfoComponent,
     FormComponent,
     GuardianInfoComponent,
+    EducationComponent,
   ],
   imports: [
     BrowserModule,

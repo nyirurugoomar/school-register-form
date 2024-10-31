@@ -16,9 +16,9 @@
     </div>
   </mat-step>
 
-  <mat-step [stepControl]="secondFormGroup" optional>
+  <mat-step [stepControl]="educationFormGroup" optional>
     <ng-template matStepLabel>Step 3: Previous Education and Enrollment Information</ng-template>
-    <!-- Additional fields here -->
+    <app-education [educationForm]="educationFormGroup"></app-education>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext>Next</button>

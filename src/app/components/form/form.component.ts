@@ -10,7 +10,7 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule, FormGroup} fr
 export class FormComponent {
   firstFormGroup: FormGroup;
   guardianFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  educationFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {
@@ -32,8 +32,13 @@ export class FormComponent {
       occupation: ['', Validators.required]
     });
 
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
+    this.educationFormGroup = this._formBuilder.group({
+      program: ['', Validators.required],
+      nameOfschool:['', Validators.required],
+      startDate:['', Validators.required]
+
+
+
     });
 
     this.thirdFormGroup = this._formBuilder.group({
